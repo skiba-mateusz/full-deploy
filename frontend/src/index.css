@@ -1,0 +1,146 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+form {
+  display: grid;
+  gap: 1rem;
+}
+
+form > label {
+  display: grid;
+}
+
+input {
+  border: 1px solid #222222;
+  border-radius: 0.2rem;
+  padding: 0.2rem 0.4rem;
+}
+
+.btn {
+  font-weight: 500;
+  padding: 0.6em 1.2em;
+  border: none;
+  border-radius: 0.2em;
+  cursor: pointer;
+  display: inline-block;
+  line-height: 1;
+  transition: 300ms;
+}
+.btn:hover {
+  opacity: 75%;
+}
+
+.btn--default {
+  background-color: #222222;
+  border: 1px solid #222222;
+
+  color: #ffffff;
+}
+
+.btn--outlined {
+  border: 1px solid #222222;
+  color: #222222;
+}
+
+.mx-auto {
+  margin-inline: auto;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.flex {
+  display: flex;
+  gap: 1.5em;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.dialog {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.dialog__header {
+  padding: 0.8rem 1.2rem;
+}
+
+.dialog__body {
+  padding: 0.8rem 1.2rem;
+}
+
+.dialog__footer {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  padding: 0.8rem 1.2rem;
+}
+
+.dialog__inner {
+  position: relative;
+  z-index: 100;
+  max-width: 32rem;
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: 0.4rem;
+}
+
+.dialog__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  background-color: #0000004b;
+  backdrop-filter: blur(4px);
+}
+
+@keyframes rotate {
+  from {
+    rotate: 0deg;
+  }
+  to {
+    rotate: 360deg;
+  }
+}
+
+.lucide-loader {
+  animation: rotate 1000ms linear infinite;
+}
