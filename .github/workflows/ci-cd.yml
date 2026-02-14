@@ -9,6 +9,17 @@ on:
 jobs:
   test-backend:
     runs-on: ubuntu-latest
+
+    services:
+      db:
+        image: postgres:16-alpine
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: testdb
+        ports:
+          - 5432:5432
+
     steps:
       - uses: actions/checkout@v4
 
@@ -23,7 +34,9 @@ jobs:
           pip install -r requirements.txt
           pip install pytest httpx
 
-      - name: Run test
+      - name: Run tests
+        env:
+          TEST_DB_URL: postgresql://postgres:postgres@localhost:5432/testdb
         run: |
           cd backend
           pytest
