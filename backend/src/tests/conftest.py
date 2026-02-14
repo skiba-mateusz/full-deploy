@@ -4,10 +4,9 @@ from sqlalchemy.orm import sessionmaker
 from src.db import Base, get_db
 from src.main import app
 from fastapi.testclient import TestClient
-import os
+from src.config import settings
 
-TEST_DB_URL = os.getenv("TEST_DB_URL", "postgresql://postgres:admin@localhost:5432/example_test")
-engine = create_engine(TEST_DB_URL)
+engine = create_engine(settings.TEST_DB_URL)
 TestSession = sessionmaker(bind=engine, autoflush=False, autocommit=False)
 
 @pytest.fixture(scope="session", autouse=True)
