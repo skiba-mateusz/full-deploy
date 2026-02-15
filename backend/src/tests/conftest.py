@@ -6,7 +6,7 @@ from src.main import app
 from fastapi.testclient import TestClient
 from src.config import settings
 
-engine = create_engine(settings.TEST_DB_URL)
+engine = create_engine(settings.DB_URL)
 TestSession = sessionmaker(bind=engine, autoflush=False, autocommit=False)
 
 @pytest.fixture(scope="session", autouse=True)

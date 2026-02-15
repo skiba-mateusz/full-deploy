@@ -3,7 +3,6 @@ from pydantic import ConfigDict
 
 class Settings(BaseSettings):
     DB_URL: str = "postgresql://postgres:admin@localhost:5432/example"
-    TEST_DB_URL: str = "postgresql://postgres:admin@localhost:5432/example_db"
     
     model_config = ConfigDict(
         env_file = ".env",
