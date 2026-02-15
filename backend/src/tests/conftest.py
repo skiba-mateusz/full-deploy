@@ -6,8 +6,6 @@ from src.main import app
 from fastapi.testclient import TestClient
 from src.config import settings
 
-TEST_DB_URL = "postgresql://postgres:postgres@localhost:5432/test_db"
-
 engine = create_engine(settings.TEST_DB_URL)
 TestSession = sessionmaker(bind=engine, autoflush=False, autocommit=False)
 
