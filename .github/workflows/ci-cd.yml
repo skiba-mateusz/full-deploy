@@ -88,6 +88,6 @@ jobs:
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SERVER_KEY }}
           script: |
-            cd /home/full-deploy
+            cd /home/${{ secrets.SERVER_USER }}/full-deploy
             git pull origin main
             docker compose up -d --build
