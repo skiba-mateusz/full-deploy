@@ -60,13 +60,13 @@ input {
 .btn--default {
   background-color: #222222;
   border: 1px solid #222222;
-
   color: #ffffff;
 }
 
 .btn--outlined {
   border: 1px solid #222222;
   color: #222222;
+  background-color: #ffffff;
 }
 
 .mx-auto {
