@@ -55,7 +55,7 @@ export const QuoteView = () => {
           <Loader />
         ) : (
           <em className="text-center">
-            {displayedQuote.text} - {displayedQuote.author}
+            "{displayedQuote.text}" - {displayedQuote.author}
           </em>
         )}
         <Button onClick={refetch}>Get Quote!</Button>
